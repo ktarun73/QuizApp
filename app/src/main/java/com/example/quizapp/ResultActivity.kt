@@ -19,11 +19,18 @@ class ResultActivity : AppCompatActivity() {
         btnFinish=findViewById(R.id.btn_finish)
         tvName=findViewById(R.id.tv_name)
         ivResult=findViewById(R.id.iv_res)
+        var tvCong:TextView=findViewById(R.id.tv_greet)
         val totalQuestions=intent.getIntExtra(Constants.TOTAL_QUESTIONS,0)
         val result=intent.getIntExtra(Constants.CORRECT_ANSWERS,0)
+        if(result>4){
+            tvCong.text="Congratulations"
+            ivResult?.setImageResource(R.drawable.ic_trophy)
+        }else{
+            tvCong.text="OH NO!!"
+            ivResult?.setImageResource(R.drawable.ic_sad)
+        }
         tvResult?.text="Your result is $result out of $totalQuestions"
         tvName?.text=intent.getStringExtra(Constants.USER_NAME)
-        
         btnFinish?.setOnClickListener{
             startActivity(Intent(this,MainActivity::class.java))
         }

@@ -23,14 +23,14 @@
         android:id="@+id/iv_res"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_trophy"
+        tools:src="@drawable/ic_trophy"
         android:layout_margin="40dp"
         android:contentDescription="@string/trophy"/>
     <TextView
-        android:id="@+id/tv_cong"
+        android:id="@+id/tv_greet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hey_congratulations"
+        tools:text="@string/hey_congratulations"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textAlignment="center"
